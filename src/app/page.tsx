@@ -19,13 +19,14 @@ import {
   Sparkles,
   LogIn,
 } from "lucide-react";
-import { BG, CHAR } from "@/lib/assets";
+import { BG, CHAR, SPONSORS } from "@/lib/assets";
+import { LinkImage } from "@/components/ui/link-image";
 
 const MODULES = [
   {
     title: "Modul Hibah Penelitian",
     description: "Modul pembelajaran Computational Thinking untuk siswa SMK.",
-    file: "/files/Modul Hibah Penelitian.pdf",
+    file: "/files/Modul Hibah Penelitian Version 2.pdf",
   },
 ];
 
@@ -95,18 +96,6 @@ const STEPS = [
     title: "Tantang Sesama",
     desc: "Tuntaskan latihan untuk membuka Arena Multiplayer dan adu kemampuan langsung.",
   },
-];
-
-const SPONSORS = [
-  {
-    src: "/images/kemdikbud.webp",
-    alt: "Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi",
-  },
-  { src: "/images/diktisaintek.webp", alt: "DIKTISAINTEK" },
-  { src: "/images/bima.webp", alt: "BIMA" },
-  { src: "/images/uniba.webp", alt: "Universitas Bina Bangsa" },
-  { src: "/images/unbaja.webp", alt: "Universitas Banten Jaya" },
-  { src: "/images/smk.webp", alt: "SMK PGRI 3" },
 ];
 
 const NAV_ITEMS = [
@@ -190,8 +179,8 @@ export default function LandingPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between gap-4">
           <Link href="#home" className="flex items-center">
             <Image
-              src="/images/codequest.webp"
-              alt="CodeQuest"
+              src="/logikalia-outline.svg"
+              alt="Logikalia"
               width={180}
               height={44}
               style={{ height: "44px", width: "auto" }}
@@ -341,7 +330,7 @@ export default function LandingPage() {
                     ease: "easeInOut",
                   }}
                 >
-                  <Image
+                  <LinkImage
                     src={CHAR.glitch}
                     alt="The Glitch"
                     width={260}
@@ -427,10 +416,10 @@ export default function LandingPage() {
           <div className="text-center mb-14">
             <div className="mb-5 flex justify-center">
               <Image
-                src="/images/codequest.webp"
-                alt="CodeQuest"
-                width={220}
-                height={56}
+                src="/Logikalia.svg"
+                alt="Logikalia"
+                width={350}
+                height={350}
                 unoptimized
                 className="h-12 w-auto sm:h-14 md:h-16"
               />
@@ -639,8 +628,8 @@ export default function LandingPage() {
           >
             <div className="mb-4 flex justify-center">
               <Image
-                src="/images/codequest.webp"
-                alt="CodeQuest"
+                src="/logikalia.svg"
+                alt="Logikalia"
                 width={280}
                 height={72}
                 unoptimized
@@ -682,10 +671,11 @@ export default function LandingPage() {
           </p>
           <div className="flex items-center justify-center gap-8 sm:gap-14 flex-wrap">
             {SPONSORS.map((s) => (
-              <Image
+              <LinkImage
                 key={s.src}
                 src={s.src}
                 alt={s.alt}
+                link={s.link}
                 width={160}
                 height={52}
                 style={{ height: "52px", width: "auto" }}
@@ -701,7 +691,7 @@ export default function LandingPage() {
       <footer className="border-t border-border mt-auto">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-sm text-muted-foreground">
           <p>
-            CodeQuest © 2026 • Platform pembelajaran adaptif berbasis AI untuk
+            Logikalia © 2026 • Platform pembelajaran adaptif berbasis AI untuk
             SMK
           </p>
         </div>

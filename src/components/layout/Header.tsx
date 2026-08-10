@@ -24,6 +24,8 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { LinkImage } from "../ui/link-image";
+import { SPONSORS } from "@/lib/assets";
 
 interface HeaderProps {
   user: {
@@ -60,8 +62,8 @@ export function Header({ user }: HeaderProps) {
         <div className="flex-1">
           <Link href="/world-map" className="flex items-center">
             <Image
-              src="/images/codequest.webp"
-              alt="CodeQuest"
+              src="/images/Logikalia.svg"
+              alt="logikalia-logo"
               width={180}
               height={40}
               style={{ height: "40px", width: "auto" }}
@@ -72,65 +74,21 @@ export function Header({ user }: HeaderProps) {
         </div>
 
         <div className="hidden md:flex items-center gap-3">
-          <Image
-            src="/images/kemdikbud.webp"
-            alt="Kemdikbud"
-            width={100}
-            height={28}
-            className="opacity-80"
-            style={{ height: "28px", width: "auto" }}
-            unoptimized
-          />
-          <span className="text-border">|</span>
-          <Image
-            src="/images/diktisaintek.webp"
-            alt="DIKTISAINTEK"
-            width={100}
-            height={28}
-            className="opacity-80"
-            style={{ height: "28px", width: "auto" }}
-            unoptimized
-          />
-          <span className="text-border">|</span>
-          <Image
-            src="/images/bima.webp"
-            alt="BIMA"
-            width={100}
-            height={28}
-            className="opacity-80"
-            style={{ height: "28px", width: "auto" }}
-            unoptimized
-          />
-          <span className="text-border">|</span>
-          <Image
-            src="/images/uniba.webp"
-            alt="Universitas Bina Bangsa"
-            width={100}
-            height={28}
-            className="opacity-80"
-            style={{ height: "28px", width: "auto" }}
-            unoptimized
-          />
-          <span className="text-border">|</span>
-          <Image
-            src="/images/unbaja.webp"
-            alt="Universitas Banten Jaya"
-            width={100}
-            height={28}
-            className="opacity-80"
-            style={{ height: "28px", width: "auto" }}
-            unoptimized
-          />
-          <span className="text-border">|</span>
-          <Image
-            src="/images/smk.webp"
-            alt="SMK PGRI 3"
-            width={100}
-            height={28}
-            className="opacity-80"
-            style={{ height: "28px", width: "auto" }}
-            unoptimized
-          />
+          {SPONSORS.map((s) => (
+            <div key={s.id}>
+              <LinkImage
+                src={s.src}
+                alt={s.alt}
+                link={s.link}
+                width={100}
+                height={28}
+                className="opacity-80"
+                style={{ height: "28px", width: "auto" }}
+                unoptimized
+              />
+              <span className="text-border">|</span>
+            </div>
+          ))}
         </div>
 
         <div className="flex-1 flex items-center justify-end gap-1">
@@ -169,7 +127,7 @@ export function Header({ user }: HeaderProps) {
                   className="py-2.5"
                   onClick={() =>
                     window.open(
-                      "/files/Modul Hibah Penelitian.pdf",
+                      "/files/Modul Hibah Penelitian Version 2.pdf",
                       "_blank",
                       "noopener,noreferrer",
                     )
@@ -227,18 +185,12 @@ export function Header({ user }: HeaderProps) {
       {/* Strip logo sponsor untuk layar mobile (di desktop tampil di dalam bar) */}
       <div className="md:hidden border-t">
         <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 px-4 py-1.5">
-          {[
-            { src: "/images/kemdikbud.webp", alt: "Kemdikbud" },
-            { src: "/images/diktisaintek.webp", alt: "DIKTISAINTEK" },
-            { src: "/images/bima.webp", alt: "BIMA" },
-            { src: "/images/uniba.webp", alt: "Universitas Bina Bangsa" },
-            { src: "/images/unbaja.webp", alt: "Universitas Banten Jaya" },
-            { src: "/images/smk.webp", alt: "SMK PGRI 3" },
-          ].map((logo) => (
-            <Image
-              key={logo.src}
+          {SPONSORS.map((logo) => (
+            <LinkImage
+              key={logo.id}
               src={logo.src}
               alt={logo.alt}
+              link={logo.link}
               width={80}
               height={20}
               className="shrink-0 opacity-70"
