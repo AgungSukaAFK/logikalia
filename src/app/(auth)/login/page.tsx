@@ -91,7 +91,7 @@ export default function LoginPage() {
           <div className="flex justify-center mb-3">
             <Image
               src="/Logikalia.svg"
-              alt="CodeQuest"
+              alt="Logikalia"
               width={280}
               height={80}
               style={{ height: "80px", width: "auto" }}
