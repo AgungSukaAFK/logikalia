@@ -1,6 +1,6 @@
-# Naskah Cerita — Code Quest
+# Naskah Cerita — Logikalia
 
-> Dokumen ini berisi naskah dialog lengkap untuk alur cerita Code Quest. Disusun mengikuti struktur sistem yang sudah ada (M2 Dekomposisi → L1 Logika Boolean → Arena Multiplayer), dengan penyesuaian **3 soal per level** sesuai arahan terbaru.
+> Dokumen ini berisi naskah dialog lengkap untuk alur cerita Logikalia. Disusun mengikuti struktur sistem yang sudah ada (M2 Dekomposisi → L1 Logika Boolean → Arena Multiplayer), dengan penyesuaian **3 soal per level** sesuai arahan terbaru.
 >
 > **Catatan implementasi:** setiap blok dialog ditandai dengan ID unik (`intro_world`, `m2_level1_open`, dst) supaya mudah dipetakan ke komponen `DialogBox`/`CutsceneModal` dan kolom tracking di tabel `profiles`.
 >

@@ -60,8 +60,8 @@ export function Header({ user }: HeaderProps) {
         <div className="flex-1">
           <Link href="/world-map" className="flex items-center">
             <Image
-              src="/images/codequest.webp"
-              alt="CodeQuest"
+              src="/images/logikalia.webp"
+              alt="Logikalia"
               width={180}
               height={40}
               style={{ height: "40px", width: "auto" }}

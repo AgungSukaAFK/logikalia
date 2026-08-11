@@ -190,8 +190,8 @@ export default function LandingPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between gap-4">
           <Link href="#home" className="flex items-center">
             <Image
-              src="/images/codequest.webp"
-              alt="CodeQuest"
+              src="/images/logikalia.webp"
+              alt="Logikalia"
               width={180}
               height={44}
               style={{ height: "44px", width: "auto" }}
@@ -427,8 +427,8 @@ export default function LandingPage() {
           <div className="text-center mb-14">
             <div className="mb-5 flex justify-center">
               <Image
-                src="/images/codequest.webp"
-                alt="CodeQuest"
+                src="/images/logikalia.webp"
+                alt="Logikalia"
                 width={220}
                 height={56}
                 unoptimized
@@ -436,7 +436,7 @@ export default function LandingPage() {
               />
             </div>
             <h2 className="text-3xl md:text-4xl font-bold">
-              Kenapa Code Quest?
+              Kenapa Logikalia?
             </h2>
           </div>
           <div className="grid gap-8 md:grid-cols-3">
@@ -639,8 +639,8 @@ export default function LandingPage() {
           >
             <div className="mb-4 flex justify-center">
               <Image
-                src="/images/codequest.webp"
-                alt="CodeQuest"
+                src="/images/logikalia.webp"
+                alt="Logikalia"
                 width={280}
                 height={72}
                 unoptimized
@@ -701,7 +701,7 @@ export default function LandingPage() {
       <footer className="border-t border-border mt-auto">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-sm text-muted-foreground">
           <p>
-            CodeQuest © 2026 • Platform pembelajaran adaptif berbasis AI untuk
+            Logikalia © 2026 • Platform pembelajaran adaptif berbasis AI untuk
             SMK
           </p>
         </div>

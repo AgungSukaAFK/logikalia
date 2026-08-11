@@ -1,7 +1,7 @@
-// Naskah cerita Code Quest — Logikalia & The Glitch.
+// Naskah cerita Logikalia — Logikalia & The Glitch.
 // Disusun untuk struktur 3 level (babak): Dekomposisi (M2) -> Boolean (L1) -> Arena.
 // Tiap modul materi = 3 soal: module_open -> [soal2 -> soal3 transisi] -> module_close.
-// Sumber naskah lengkap: /naskah-cerita-codequest.md (di-collapse per-modul).
+// Sumber naskah lengkap: /naskah-cerita-logikalia.md (di-collapse per-modul).
 
 import { BG, CHAR } from "@/lib/assets";
 

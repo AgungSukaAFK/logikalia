@@ -280,7 +280,7 @@ async function main() {
     new Paragraph({
       heading: HeadingLevel.TITLE,
       alignment: AlignmentType.CENTER,
-      children: [new TextRun({ text: "Bank Soal - Code Quest" })],
+      children: [new TextRun({ text: "Bank Soal - Logikalia" })],
     }),
     new Paragraph({
       alignment: AlignmentType.CENTER,
@@ -333,7 +333,7 @@ async function main() {
 
   const outDir = path.join(__dirname, "..", "exports");
   fs.mkdirSync(outDir, { recursive: true });
-  const outPath = path.join(outDir, "Bank-Soal-CodeQuest.docx");
+  const outPath = path.join(outDir, "Bank-Soal-Logikalia.docx");
   const buffer = await Packer.toBuffer(doc);
   fs.writeFileSync(outPath, buffer);
 
