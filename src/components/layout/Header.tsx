@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
+  BarChart3,
   BookOpen,
   BrainCircuit,
   LogOut,
@@ -210,6 +211,13 @@ export function Header({ user }: HeaderProps) {
                     >
                       <Settings2 className="mr-2 h-4 w-4" />
                       Manajemen Sistem
+                    </DropdownMenuItem>
+                    <DropdownMenuItem
+                      className="py-2.5"
+                      onClick={() => router.push("/moderator/analisis")}
+                    >
+                      <BarChart3 className="mr-2 h-4 w-4" />
+                      Analisis Sistem
                     </DropdownMenuItem>
                   </>
                 )}
