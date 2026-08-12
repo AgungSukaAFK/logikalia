@@ -1,12 +1,12 @@
-# Code Quest — Dokumentasi Sistem
+# Logikalia — Dokumentasi Sistem
 
-> Dokumen ini menjelaskan keseluruhan sistem **Code Quest** secara penuh dan detail, dari konsep produk, arsitektur, alur permainan, sistem narasi/cerita, Reinforcement Learning (RL) adaptif, mode multiplayer, sampai skema database. Ditujukan sebagai bahan diskusi agar siapapun (termasuk AI/model lain) bisa memahami project ini secara utuh tanpa perlu membaca seluruh kode.
+> Dokumen ini menjelaskan keseluruhan sistem **Logikalia** secara penuh dan detail, dari konsep produk, arsitektur, alur permainan, sistem narasi/cerita, Reinforcement Learning (RL) adaptif, mode multiplayer, sampai skema database. Ditujukan sebagai bahan diskusi agar siapapun (termasuk AI/model lain) bisa memahami project ini secara utuh tanpa perlu membaca seluruh kode.
 
 ---
 
 ## 1. Ringkasan Produk
 
-**Code Quest** adalah game edukasi berbasis web untuk mengajarkan **Computational Thinking** dan **Logika Boolean** kepada siswa. Keunikan utamanya: tingkat kesulitan soal **diatur secara adaptif** oleh agen **Q-Learning (Reinforcement Learning)** berdasarkan performa tiap siswa, sehingga setiap siswa mendapat tantangan yang sesuai kemampuannya (tidak terlalu mudah, tidak terlalu sulit).
+**Logikalia** adalah game edukasi berbasis web untuk mengajarkan **Computational Thinking** dan **Logika Boolean** kepada siswa. Keunikan utamanya: tingkat kesulitan soal **diatur secara adaptif** oleh agen **Q-Learning (Reinforcement Learning)** berdasarkan performa tiap siswa, sehingga setiap siswa mendapat tantangan yang sesuai kemampuannya (tidak terlalu mudah, tidak terlalu sulit).
 
 Seluruh gameplay dibungkus **cerita ringan**: dunia bernama **Logikalia** yang kacau akibat gangguan **"The Glitch"**, dipandu NPC **"Sang Kompil"**. Siswa "membetulkan" tiap area dengan menyelesaikan soal (lihat §7).
 
@@ -231,7 +231,7 @@ Setiap keputusan & update RL dicatat detail di tabel `rl_events` (state sebelum/
 Gameplay dibungkus cerita ringan bergaya visual-novel: dunia **Logikalia**, NPC pemandu **Sang Kompil**, dan antagonis **The Glitch** yang mengacaukan tiap area. Tiap modul = 1 babak cerita dengan sub-cutscene di sela soal.
 
 ### 7.1 Naskah — `src/lib/narrative/script.ts`
-- Naskah lengkap (versi prosa) ada di `/naskah-cerita-codequest.md` di root repo; `script.ts` adalah versi ter-strukturkan sebagai data.
+- Naskah lengkap (versi prosa) ada di `/naskah-cerita-logikalia.md` di root repo; `script.ts` adalah versi ter-strukturkan sebagai data.
 - `NARRATIVE_SCRIPT: Record<string, DialogScene>` — kamus scene by id. Tiap `DialogScene` berisi:
   - `trigger`: `"once"` (checkpoint besar, di-persist ke `profiles`, tidak diulang) atau `"per_session"` (transisi ringan, tampil tiap sesi main tanpa disimpan).
   - `persistColumn?`: kolom boolean di `profiles` yang di-set `true` saat scene `"once"` selesai (lihat `NarrativeColumn`, §10.1).
@@ -305,7 +305,7 @@ Dua jalur login (Supabase Auth, akun email/password di belakang layar):
 1. **Siswa** — login via **NISN + Nama Lengkap** (`/api/auth/student-login`). Server:
    - Cari profil dengan `nisn` (case-insensitive) & `role = 'siswa'`.
    - Cocokkan `display_name` (dinormalisasi) dengan nama yang diinput.
-   - Bangun email deterministik `{nisn}@students.codequest.local` & password deterministik `Siswa-{nisn}-{STUDENT_AUTH_SECRET}`, lalu `signInWithPassword`.
+   - Bangun email deterministik `{nisn}@students.logikalia.local` & password deterministik `Siswa-{nisn}-{STUDENT_AUTH_SECRET}`, lalu `signInWithPassword`.
    - Akun siswa **disediakan oleh moderator** (provisioning), siswa tidak mendaftar sendiri. Kelas (`class_name`) dipilih dari daftar tabel `classes` (§10.10) saat provisioning.
 2. **Moderator/Guru** — login email+password biasa; mengakses panel `(moderator)`.
 

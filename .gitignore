@@ -51,3 +51,6 @@ pnpm-workspace.yaml
 # AGENTS
 AGENTS.md
 CLAUDE.md
+skill-ponytail-temp.md
+/.agents/*
+/.cline/*

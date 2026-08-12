@@ -7,7 +7,7 @@ function normalizeText(value: string) {
 }
 
 function buildStudentEmail(nisn: string) {
-  return `${nisn}@students.codequest.local`;
+  return `${nisn}@students.logikalia.local`;
 }
 
 function buildStudentPassword(nisn: string) {

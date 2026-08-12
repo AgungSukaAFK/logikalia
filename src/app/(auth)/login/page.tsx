@@ -90,7 +90,7 @@ export default function LoginPage() {
         <div className="text-center">
           <div className="flex justify-center mb-3">
             <Image
-              src="/Logikalia.svg"
+              src="/images/logikalia.webp"
               alt="Logikalia"
               width={280}
               height={80}
