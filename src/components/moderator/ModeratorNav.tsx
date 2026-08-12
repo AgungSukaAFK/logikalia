@@ -1,16 +1,17 @@
 "use client";
 
 import Link from "next/link";
-import { BookOpen, Users } from "lucide-react";
+import { BarChart3, BookOpen, Users } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface ModeratorNavProps {
-  active: "users" | "puzzles";
+  active: "users" | "puzzles" | "analisis";
 }
 
 const LINKS = [
-  { key: "users",   href: "/moderator/users",   label: "Pengguna", icon: Users },
-  { key: "puzzles", href: "/moderator/puzzles",  label: "Soal",     icon: BookOpen },
+  { key: "users",    href: "/moderator/users",    label: "Pengguna", icon: Users },
+  { key: "puzzles",  href: "/moderator/puzzles",   label: "Soal",     icon: BookOpen },
+  { key: "analisis", href: "/moderator/analisis",  label: "Analisis Sistem", icon: BarChart3 },
 ] as const;
 
 export function ModeratorNav({ active }: ModeratorNavProps) {
