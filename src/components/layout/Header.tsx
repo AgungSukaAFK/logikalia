@@ -62,8 +62,8 @@ export function Header({ user }: HeaderProps) {
         <div className="flex-1">
           <Link href="/world-map" className="flex items-center">
             <Image
-              src="/images/Logikalia.svg"
-              alt="logikalia-logo"
+              src="/images/Logikalia.webp"
+              alt="Logikalia"
               width={180}
               height={40}
               style={{ height: "40px", width: "auto" }}
@@ -86,9 +86,9 @@ export function Header({ user }: HeaderProps) {
                 style={{ height: "28px", width: "auto" }}
                 unoptimized
               />
-              <span className="text-border">|</span>
             </div>
           ))}
+          <span className="text-border">|</span>
         </div>
 
         <div className="flex-1 flex items-center justify-end gap-1">

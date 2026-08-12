@@ -179,8 +179,8 @@ export default function LandingPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between gap-4">
           <Link href="#home" className="flex items-center">
             <Image
-              src="/images/codequest.webp"
-              alt="CodeQuest"
+              src="/images/logikalia.webp"
+              alt="logikalia"
               width={180}
               height={44}
               style={{ height: "44px", width: "auto" }}
@@ -416,8 +416,8 @@ export default function LandingPage() {
           <div className="text-center mb-14">
             <div className="mb-5 flex justify-center">
               <Image
-                src="/images/codequest.webp"
-                alt="CodeQuest"
+                src="/images/logikalia.webp"
+                alt="logikalia"
                 width={220}
                 height={56}
                 unoptimized
@@ -628,8 +628,8 @@ export default function LandingPage() {
           >
             <div className="mb-4 flex justify-center">
               <Image
-                src="/images/codequest.webp"
-                alt="CodeQuest"
+                src="/images/Logikalia.webp"
+                alt="Logikalia"
                 width={280}
                 height={72}
                 unoptimized

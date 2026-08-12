@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
 import { toast } from "sonner";
@@ -23,6 +23,17 @@ interface WorldMapClientProps {
   l1Done?: boolean;
   hasSeenIntroWorld?: boolean;
 }
+
+// Posisi bintang ditentukan SEKALI di luar komponen (saat file dimuat) —
+// bukan saat render. Ini menghindari pemanggilan Math.random() selama render,
+// sesuai aturan react-hooks/purity (komponen harus pure/idempotent).
+const STARS = Array.from({ length: 36 }, (_, i) => ({
+  id: i,
+  left: Math.random() * 100,
+  top: Math.random() * 100,
+  duration: 2 + Math.random() * 3,
+  delay: Math.random() * 2,
+}));
 
 export function WorldMapClient({
   userId,
@@ -103,18 +114,6 @@ export function WorldMapClient({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const stars = useMemo(
-    () =>
-      Array.from({ length: 36 }, (_, i) => ({
-        id: i,
-        left: Math.random() * 100,
-        top: Math.random() * 100,
-        duration: 2 + Math.random() * 3,
-        delay: Math.random() * 2,
-      })),
-    [],
-  );
-
   return (
     <main className="relative flex-1 overflow-hidden">
       <motion.div
@@ -137,7 +136,7 @@ export function WorldMapClient({
       >
         <div className="absolute inset-0 bg-slate-950/45" />
         <div className="absolute inset-0 opacity-30">
-          {stars.map((star) => (
+          {STARS.map((star) => (
             <motion.div
               key={star.id}
               className="absolute h-1 w-1 rounded-full bg-white"
