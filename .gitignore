@@ -42,3 +42,16 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+
+# pnppm
+pnpm-lock.yaml
+pnpm-workspace.yaml
+
+# AGENTS
+AGENTS.md
+CLAUDE.md
+skill-ponytail-temp.md
+/.agents/*
+/.cline/*
+/.clinerules/*
